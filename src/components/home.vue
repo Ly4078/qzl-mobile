@@ -538,7 +538,7 @@ export default {
       console.log(obj);
       this.$router.push("/writedetails");
     },
-    handlenew(obj){
+    handlenew(obj) {
       console.log(obj);
       this.actliobj = obj;
       this.$router.push("/newdetails");
@@ -616,6 +616,17 @@ export default {
       background: #e67817;
       color: #fff;
       border: 1px solid #e67817;
+    }
+  }
+  .lir {
+    p:nth-child(2) {
+      display: -webkit-box; /*作为弹性伸缩盒子模型显示*/
+      -webkit-line-clamp: 2; /*显示的行数；如果要设置2行加...则设置为2*/
+      overflow: hidden;
+      text-overflow: ellipsis; /* 溢出用省略号*/
+      /*! autoprefixer: off */
+      -webkit-box-orient: vertical; /*伸缩盒子的子元素排列：从上到下*/
+      /* autoprefixer: on */
     }
   }
 }
