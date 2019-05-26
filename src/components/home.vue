@@ -571,7 +571,7 @@ export default {
 </script>
 <style lang="less">
 .home {
-  .mint-swipe {
+  .mint-swipe-item .mint-swipe {
     width: 100%;
     height: 495px;
     overflow: hidden !important;
@@ -579,15 +579,16 @@ export default {
     top: -30px;
     .mint-swipe-item img {
       height: 495px;
+      width: 100%;
       overflow: hidden !important;
     }
   }
   .box7rimg {
-    width: 683px;
+    width: 70%;
     height: 529px;
     float: right;
     position: relative;
-    margin-top: -550px;
+    margin-top: -580px;
     z-index: 3;
     margin-bottom: 50px;
   }
@@ -626,7 +627,7 @@ export default {
       color: #fff;
       border: 1px solid #e67817;
     }
-    .reset{
+    .reset {
       background: #999;
       color: #000;
     }
@@ -644,7 +645,7 @@ export default {
         }
         .ptxt {
           float: right;
-          width: 420px;
+          width: 70%;
           font-size: 14px;
           padding-top: 10px;
 
@@ -676,8 +677,8 @@ export default {
       float: left;
       .b6img {
         float: left;
-        width:80px;
-        height:80px;
+        width: 80px;
+        height: 80px;
         margin-top: 20px;
         border-radius: 50%;
         border: 1px solid #e67817;
@@ -716,6 +717,80 @@ export default {
       }
     }
   }
+  .mo-home-box {
+    padding: 50px 0;
+    height: 750px;
+    li {
+      width: 49%;
+      height: 309px;
+      float: left;
+      position: relative;
+      margin-bottom: 60px;
+      text-align: center;
+      cursor: pointer;
+      .motai {
+        width: 100%;
+        height: 354px;
+        background: #e67817;
+        position: absolute;
+        margin-top: 30px;
+        z-index: 20;
+        box-shadow: 0px 0px 10px 0px rgba(230, 120, 23, 0.85);
+        .bimgi1 {
+          top: 16%;
+        }
+      }
+      .b4bjimg {
+        width: 100%;
+        height: 350px;
+      }
+      .imgi1 {
+        position: absolute;
+        top: 64px;
+        left: 90px;
+        z-index: 10;
+        border-radius: 50%;
+        border: 2px solid #fff;
+      }
+      .bimgi1 {
+        position: absolute;
+        width: 88px;
+        height: 88px;
+        top: 28%;
+        z-index: 10;
+        border-radius: 50%;
+        border: 2px solid #fff;
+        left: 36%;
+      }
+      .title {
+        position: relative;
+        top: 62%;
+        font-size: 26px;
+        font-family: "MicrosoftYaHei-Bold";
+        font-weight: bold;
+        color: #fff;
+        z-index: 21;
+      }
+      .b4txt {
+        position: relative;
+        top: -140px;
+        z-index: 21;
+        p {
+          font-size: 12px;
+          font-family: "MicrosoftYaHei";
+          font-weight: 400;
+          color: #fff;
+          line-height: 40px;
+        }
+      }
+      &:nth-child(2n) {
+        margin-left: 2%;
+      }
+      &:last-child {
+        margin: none;
+      }
+    }
+  }
 
   .lir {
     p:nth-child(2) {
@@ -729,4 +804,32 @@ export default {
     }
   }
 }
+@media screen and (min-width: 600px) {
+  .home .write li .lir {
+    width: 70%;
+  }
+  .home .mo-whys li .whyli .ptxt {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 800px) {
+  .home .write li .lir {
+    width: 80%;
+  }
+  .home .mo-whys li .whyli .ptxt {
+    width: 81%;
+  }
+  .mo-homebox ul li img{
+    height: 429px;
+  }
+  .home .mo-home-box li .bimgi1{
+        left: 40%;
+  }
+}
+@media screen and (min-width: 700px) {
+  .home .mo-home-box li .bimgi1{
+        left: 39%;
+  }
+}
+
 </style>

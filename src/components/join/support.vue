@@ -22,7 +22,7 @@
       </div>
       <div class="liucada">
         <img class="fcimg5" src="../../assets/imgs/fcimg5.png" alt>
-        <ul>
+        <ul :class="isAndroid?'isandroid':'isios'">
           <li v-for="item in lclist" :key="item.id">
             <p class="p1">{{item.label}}</p>
             <p class="p2">{{item.txt}}</p>
@@ -37,6 +37,8 @@ export default {
   name: "support",
   data() {
     return {
+      isAndroid: true,
+      isiOS: false,
       support: [
         {
           id: 1,
@@ -81,7 +83,7 @@ export default {
           txt: "在线填写个人真实的基本信息 以便快速通过审核"
         },
         {
-          id:2,
+          id: 2,
           label: "总部审核",
           txt: "个人真实信息，身份证，店铺实景照片及地理位置"
         },
@@ -115,6 +117,32 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    getispc() {
+      let ISPC = false,
+        isAndroid = false,
+        u = navigator.userAgent,
+        isiOS = false;
+      if (
+        /Android|webOS|iPhone|iPod|iPod|iPad|Windows Phone|SymbianOS|BlackBerry/i.test(
+          u
+        )
+      ) {
+        if (u.indexOf("Android") > -1 || u.indexOf("Adr") > -1) {
+          //android终端
+          this.isAndroid = true;
+          this.isiOS = false;
+        } else if (!!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/)) {
+          //ios终端
+          this.isAndroid = false;
+          this.isiOS = true;
+        }
+      }
+    }
+  },
+  created() {
+    this.getispc();
   }
 };
 </script>
@@ -169,29 +197,52 @@ export default {
   }
   .liucada {
     width: 100%;
-    height: 380px;
+    height: 480px;
     position: relative;
     .fcimg5 {
       width: 100%;
+      height: 80%;
     }
-    ul{
+    ul {
       position: absolute;
       top: 0px;
-      li{
+      li {
         width: 24%;
         float: left;
-        padding-top:50px;
+        padding-top: 70px;
         padding-left: 50px;
         font-size: 18px;
-        .p1{
+        .p1 {
           font-weight: bold;
         }
-        .p2{
-          font-size: 14px;
+        .p2 {
+          font-size: 16px;
         }
       }
-      li:nth-child(4), li:nth-child(5), li:nth-child(6){
-        padding-top: 20px;
+    }
+    .isandroid {
+      li:nth-child(4),
+      li:nth-child(5),
+      li:nth-child(6) {
+        padding-top: 54px;
+      }
+      li:nth-child(7),
+      li:nth-child(8),
+      li:nth-child(9) {
+        padding-top: 60px;
+      }
+    }
+    .isios {
+    
+      li:nth-child(4),
+      li:nth-child(5),
+      li:nth-child(6) {
+        padding-top: 42px;
+      }
+      li:nth-child(7),
+      li:nth-child(8),
+      li:nth-child(9) {
+        padding-top: 42px;
       }
     }
   }

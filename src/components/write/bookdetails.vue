@@ -173,6 +173,9 @@ export default {
       transform: rotate(135deg);
     }
   }
+  .txt{
+    text-indent: 2em;
+  }
   .ptxt:last-child{
     margin-bottom: 50px;
   }
