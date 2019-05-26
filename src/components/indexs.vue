@@ -351,7 +351,7 @@ header {
     width: 150px;
     right: 0;
     z-index: 10;
-    background: rgba(146, 140, 135, 0.69);
+    background: rgba(146, 140, 135, 0.9);
     li {
       font-size: 20px;
       width: 100%;
@@ -366,9 +366,9 @@ header {
     position: absolute;
     width: 150px;
     right: 150px;
-    top: 110px;
+    top: 115px;
     z-index: 10;
-    background: rgba(230, 208, 88, 0.69);
+    background: rgba(230, 208, 88, 0.9);
     li {
       font-size: 20px;
       width: 100%;

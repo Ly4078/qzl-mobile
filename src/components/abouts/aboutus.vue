@@ -18,6 +18,7 @@
         <li
           v-for="item in box2list"
           :key="item.id"
+          @click="handlelist(item,1)"
           @mouseenter="enter(item,1)"
           @mouseleave="leave()"
         >
@@ -37,6 +38,7 @@
         <li
           v-for="item in box3list"
           :key="item.id"
+          @click="handlelist(item,2)"
           @mouseenter="enter(item,2)"
           @mouseleave="leave()"
         >
@@ -54,7 +56,28 @@
         <span class="span1">启智灵荣誉</span>
         <span class="span2">Qi Zhiling Honor</span>
       </div>
-      <img class="abx" src="../../assets/imgs/abx.jpg" alt="">
+      <div class="rongyu">
+        <img class="abx" src="../../assets/imgs/33310.jpg" alt>
+        <p class="ryp" v-for="(item,index) in abstxt" :key="index">{{item}}</p>
+        <img class="abxs" src="../../assets/imgs/QQ图片20190307133254.png" alt>
+        <p class="ryp" v-for="(item,index) in abstxt2" :key="index">{{item}}</p>
+      </div>
+      <div class="guiesa">
+        <ul>
+          <li v-for="item in box32list" :key="item.id">
+            <img :src="item.imgurl" alt>
+            <p class="zsp1">{{item.t1}}</p>
+            <p class="zsp2">{{item.t2}}</p>
+            <p class="zsp3">{{item.t3}}</p>
+            <p class="zsp4">{{item.t4}}</p>
+          </li>
+        </ul>
+      </div>
+      <div class="zshfd">
+        <img class="zsss" src="../../assets/imgs/258.jpg" alt="">
+        <p>启智灵商标注册证</p>
+        <img class="logo" src="../../assets/imgs/logo.png" alt="">
+      </div>
     </div>
   </div>
 </template>
@@ -131,6 +154,44 @@ export default {
           label:
             "旨在帮助更多的合作伙伴高效快速走向致富道路；让少年儿童与家长在启智灵免费阅读，并同时享有线上购书线下取货和作文辅导教学的服务。 "
         }
+      ],
+      abstxt: [
+        "2012年8月1日上午，武汉市工商行政管理局武昌分局积玉桥工商所所长亲临武汉启智灵教育科技有限公司，颁发2011年度武汉市“守合同重信用企业”荣誉证书和牌匾。",
+        "“守重企业”认定活动是由武汉市工商局、武汉市合同信用促进会和武汉企业信用建设促进会联合开展的，并经过武汉市基层工商部门初审推荐、第三方测评征信、市工商局审查和媒体公示等多重程序，最终确定“守重企业”名单。自2009年起，启智灵已连续三年获得武汉市“守重企业”荣誉称号。",
+        "我国《合同法》将诚实守信作为合同订立和履行的基本原则。武汉启智灵自成立以来，一直认真贯彻并执行《合同法》和其它相关法律、法规及条例，守合同，重信用。",
+        "启智灵一直认真配合合同管理机关及相关部门，做好合同管理工作，主动接受工商行政管理机关、业务主管等部门的指导和监督。结合企业实际情况，公司还建立了合适的经济合同管理制度，进行合同规范化管理，并配备具有一定合同认识、责任心强的工作人员负责合同的订立、履行和管理工作。公司还注意培养所有员工的法制观念，树立员工的重信守约意识，把重信守约贯穿于合作、服务的整个环节。"
+      ],
+      abstxt2: [
+        "启智灵将再接再厉，不断完善合同管理制度，继续坚持诚实守信的原则，做“守重”企业，塑“守重”品牌！"
+      ],
+      box32list: [
+        {
+          id: 1,
+          imgurl: require("../../assets/imgs/guowei2.jpg"),
+          t1: "武汉启智灵教育科技有限公司",
+          t2: "工商局注册号：9142010674831988XU",
+          t3: "武汉市工商行政管理局备案企业信息",
+          t4:
+            "武汉启智灵教育科技有限公司，成立于中国武汉教育之都。2003在武汉市工商行政管理局武昌分局成功注册启智灵读书馆品牌。"
+        },
+        {
+          id: 1,
+          imgurl: require("../../assets/imgs/guowei.jpg"),
+          t1: "武汉启智灵教育科技有限公司",
+          t2: "特许备案号： 0420101301000023",
+          t3: "中国商务部特许经营备案企业",
+          t4:
+            "武汉启智灵教育科技有限公司，首批经中华人民共和国商务部商业特许连锁经营备案的企业。"
+        },
+        {
+          id: 1,
+          imgurl: require("../../assets/imgs/guowei3.jpg"),
+          t1: ".",
+          t2: ".",
+          t3: "中央电视台尊贵客户",
+          t4:
+            "2011启智灵品牌以良好的品牌形象，良好的商业信用，良好的服务口碑，被授予中央电视台尊贵客户荣誉称号。"
+        }
       ]
     };
   },
@@ -140,6 +201,15 @@ export default {
         this.actobj1 = obj;
       } else if (val == 2) {
         this.actobj2 = obj;
+      }
+    },
+    handlelist(obj, val) {
+      if (val == 1) {
+        this.actobj1 = obj;
+        this.actobj2 = {};
+      } else if (val == 2) {
+        this.actobj2 = obj;
+        this.actobj1 = {};
       }
     },
     leave() {
@@ -152,12 +222,113 @@ export default {
 
 <style lang="less">
 .aboutus {
- 
+  .span2 {
+    left: -50px;
+  }
+  .mo-ablist1 {
+    padding: 40px 0;
+    font-size: 12px;
+    height: 600px;
+    li {
+      padding: 2.5%;
+      width: 45%;
+      float: left;
+      .b2motai {
+        position: absolute;
+        width: 38%;
+        height: 180px;
+        background: #000;
+        opacity: 0.6;
+        z-index: 10;
+        .bmtbox {
+          width: 90%;
+          height: 150px;
+          border: 2px solid#fff;
+          margin-top: 5%;
+          margin-left: 4%;
+          overflow: hidden;
+          img {
+            opacity: 0.6;
+            width: 100%;
+            height: 160px;
+          }
+          p {
+            text-align: center;
+            color: #fff;
+            position: relative;
+            top: -150px;
+            text-align: center;
+            text-indent: 0;
+            &:nth-child(1) {
+              font-size: 30px;
+              line-height: 40px;
+            }
+            &:nth-child(2) {
+              font-size: 18px;
+              line-height: 26px;
+            }
+          }
+          hr {
+            width: 60%;
+            color: red;
+            position: relative;
+            top: -120px;
+          }
+        }
+      }
+      .dimg {
+        width: 100%;
+        height: 180px;
+      }
+    }
+  }
+  .mo-ablist2 {
+    padding: 50px 0 40px 0;
+    height: 210px;
 
+    li {
+      width: 49%;
+      float: left;
+      height: 100px;
+      margin-bottom: 14px;
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+      }
+      .bimg {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        line-height: 100px;
+        text-align: center;
+        background: #e67817;
+        float: left;
+        color: #fff;
+        font-size: 20px;
+      }
+      .bd3iv {
+        width: 60%;
+        float: right;
+        p {
+          &:nth-child(1) {
+            font-weight: bold;
+            line-height: 30px;
+            color: #000;
+          }
+        }
+        p:nth-child(2) {
+          font-size: 14px;
+        }
+      }
+      &:nth-child(2n-1) {
+        margin-right: 1%;
+      }
+    }
+  }
   .attxt {
     width: 64%;
-    font-size: 6px;
-    font-size: 62.5%;
+    font-size: 20px;
     p {
       text-indent: 2em;
     }
@@ -166,9 +337,89 @@ export default {
     width: 220px;
     float: right;
   }
-  .abx{
-    width: 100%;
+  .rongyu {
+    .abx {
+      width: 150px;
+      float: left;
+      margin-right: 20px;
+      margin-bottom: 20px;
+    }
+    .abxs {
+      width: 300px;
+      float: right;
+    }
+    .ryp {
+      text-indent: 2em;
+      width: auto;
+    }
   }
-  
+  .guiesa {
+    width: 100%;
+    overflow: hidden;
+    padding: 50px 0;
+    ul {
+      width: 100%;
+      li {
+        width: 32%;
+        float: left;
+        margin-right: 1%;
+        text-align: left;
+        img{
+          width: 100%;
+          margin-right: 1%;
+        }
+        p {
+          position: relative;
+          top: -40px;
+          font-size: 12px;
+          text-align: center;
+        }
+        .zsp1,
+        .zsp2 {
+          color: #fff;
+        }
+        .zsp3 {
+          font-size: 16px;
+          font-family: "MicrosoftYaHei";
+          font-weight: 400;
+          color: #333;
+          padding: 21px 0 17px 0;
+          text-align: center;
+        }
+        .zsp4 {
+          text-indent: 2em;
+          font-size: 14px;
+          font-family: "MicrosoftYaHei";
+          font-weight: 400;
+          color: #999;
+          line-height: 24px;
+        }
+      }
+      li:last-child {
+        margin-right: none;
+      }
+    }
+  }
+  .zshfd{
+    width: 100%;
+    padding-bottom: 50px;
+    position: relative;
+    .zsss{
+      width: 100%;
+    }
+    p{
+      position: absolute;
+      text-align: center;
+      top: 260px;
+      font-size: 14px;
+      width: 100%;
+    }
+    .logo{
+      position: absolute;
+      width: 160px;
+      top:180px;
+      left: 240px;
+    }
+  }
 }
 </style>

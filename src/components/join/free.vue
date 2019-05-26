@@ -53,7 +53,16 @@
     </div>
     <img class="xiezi2" src="../../assets/imgs/xiezi2.jpg" alt>
     <div class="homebox">
-      <img class="fdsawewq" src="../../assets/imgs/fdsawewq.jpg" alt>
+      <div class="iconss">
+        <ul>
+          <li v-for="(item,index) in icoslists" :key="index" @click="handler(item)">
+            <p><img :src="item.imgurl" alt=""><span>{{item.label}}</span></p>
+          </li>
+        </ul>
+        <img class="wxgzh" src="../../assets/imgs/wxgzh.png" alt="">
+        <img class="jmwxh" src="../../assets/imgs/jmwxh.png" alt="">
+      </div>
+      <img class="map" src="../../assets/imgs/map.jpg" alt="">
     </div>
   </div>
 </template>
@@ -73,6 +82,38 @@ export default {
         county: "",
         remke: ""
       },
+      icoslists: [
+        {
+          id:1,
+          imgurl:require('../../assets/imgs/iconaa1.jpg'),
+          label: "公司名称：武汉启智灵教育科技有限公司"
+        },
+        {
+          id:2,
+          imgurl:require('../../assets/imgs/iconaa2.jpg'),
+          label: "公司电话：027-88860088"
+        },{
+          id:3,
+          imgurl:require('../../assets/imgs/iconaa3.jpg'),
+          label: "联系手机：13545163618"
+        },{
+          id:4,
+          imgurl:require('../../assets/imgs/iconaa4.jpg'),
+          label: "联  系  人：君先生"
+        },{
+          id:5,
+          imgurl:require('../../assets/imgs/iconaa5.jpg'),
+          label: "公司网址：www.qzl88.com    www.qika88.com"
+        },{
+          id:6,
+          imgurl:require('../../assets/imgs/iconaa6.jpg'),
+          label: "邮       编：430061"
+        },{
+          id:7,
+          imgurl:require('../../assets/imgs/iconaa7.jpg'),
+          label: "地       址：武汉市武昌区中山路螃蟹甲2008新长江广场30层"
+        }
+      ],
       couponList: [
         {
           id: 1,
@@ -86,6 +127,14 @@ export default {
     };
   },
   methods: {
+    handler(obj){
+      console.log(obj)
+      // if(obj.id ==2){
+      //   window.location.href = 'tel:027-88860088';
+      // }else if(obj.id ==3){
+      //   window.location.href = 'tel:13545163618';
+      // }
+    },
     getvercode(){
       console.log("getvercode")
     },
@@ -155,6 +204,46 @@ export default {
     input, textarea{
       width: 400px;
     }
+  }
+  .iconss{
+    padding: 50px 0;
+     position: relative;
+    ul{
+      li{
+        p{
+          padding: 10px 0;
+          height: 60px;
+          line-height: 60px;
+         
+          img{
+            width: 60px;
+            height: 60px;
+          }
+          span{
+            position: relative;
+            left: 20px;
+            top:-20px;
+          }
+        }
+      }
+    }
+    .wxgzh, .jmwxh{
+      width: 150px;
+      height: 150px;
+      position: absolute;
+    }
+    .wxgzh{
+      top: 230px;
+      right: 150px;
+    }
+    .jmwxh{
+      top: 230px;
+      right:0px;
+    }
+  }
+  .map{
+    width: 100%;
+    margin-bottom: 50px;
   }
 }
 </style>

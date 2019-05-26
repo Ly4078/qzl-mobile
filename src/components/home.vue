@@ -107,6 +107,7 @@
         <li
           v-for="item in box4list"
           :key="item.id"
+          @click="enter(item,2)"
           @mouseenter="enter(item,2)"
           @mouseleave="leave()"
         >
@@ -148,6 +149,7 @@
         <li
           v-for="item in box6list"
           :key="item.id"
+          @click="enter(item,3)"
           @mouseenter="enter(item,3)"
           @mouseleave="leave()"
           class="pinpaili"
@@ -546,10 +548,16 @@ export default {
     enter(obj, val) {
       if (val == 1) {
         this.actliobj = obj;
+        this.actliobjs = {};
+        this.actliobj3 = {};
       } else if (val == 2) {
         this.actliobj2 = obj;
+        this.actliobj = {};
+        this.actliobj3 = {};
       } else if (val == 3) {
         this.actliobj3 = obj;
+        this.actliobj = {};
+        this.actliobjs = {};
       }
     },
     leave() {
@@ -579,16 +587,16 @@ export default {
     height: 529px;
     float: right;
     position: relative;
-    margin-top: -500px;
+    margin-top: -550px;
     z-index: 3;
     margin-bottom: 50px;
   }
   .mo-hform {
     width: 555px;
-    height: 521px;
+    height: 540px;
     position: relative;
     left: 21px;
-    top: -4px;
+    top: -10px;
     border: 3px solid #e67817;
     z-index: 5;
     padding-left: 30px;
@@ -611,17 +619,108 @@ export default {
     .submit {
       padding: 5px 30px;
       color: #333;
+      margin-bottom: 20px;
     }
     .submit {
       background: #e67817;
       color: #fff;
       border: 1px solid #e67817;
     }
+    .reset{
+      background: #999;
+      color: #000;
+    }
   }
+  .mo-whys {
+    width: 100%;
+    height: 570px;
+    li {
+      height: 200px;
+      .whyli {
+        .whyimg {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+        }
+        .ptxt {
+          float: right;
+          width: 420px;
+          font-size: 14px;
+          padding-top: 10px;
+
+          p {
+            &:nth-child(1) {
+              font-size: 22px;
+              color: #e67817;
+              margin-bottom: 10px;
+            }
+          }
+        }
+      }
+      &:nth-child(2n) {
+        .ptxt {
+          float: left;
+          text-align: right;
+          margin-right: 20px;
+        }
+      }
+    }
+  }
+  .mo-pinpai {
+    width: 80%;
+    height: 750px;
+    float: left;
+    .pinpaili {
+      width: 49%;
+      height: 200px;
+      float: left;
+      .b6img {
+        float: left;
+        width:80px;
+        height:80px;
+        margin-top: 20px;
+        border-radius: 50%;
+        border: 1px solid #e67817;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          width: 40px;
+          height: 40px;
+        }
+      }
+      .actb6img {
+        background: #e67817;
+      }
+      .b6txt {
+        margin-left: 100px;
+        text-align: left;
+        p {
+          font-size: 12px;
+          font-family: "MicrosoftYaHei";
+          font-weight: 400;
+          color: #999;
+          line-height: 26px;
+          &:nth-child(1) {
+            color: #e67817;
+            font-size: 18px;
+            font-size: 50%;
+            font-family: "MicrosoftYaHei";
+            font-weight: 400;
+            line-height: 40px;
+          }
+        }
+      }
+      &:nth-child(2n-1) {
+        margin-right: 1%;
+      }
+    }
+  }
+
   .lir {
     p:nth-child(2) {
       display: -webkit-box; /*作为弹性伸缩盒子模型显示*/
-      -webkit-line-clamp: 2; /*显示的行数；如果要设置2行加...则设置为2*/
+      -webkit-line-clamp: 3; /*显示的行数；如果要设置2行加...则设置为2*/
       overflow: hidden;
       text-overflow: ellipsis; /* 溢出用省略号*/
       /*! autoprefixer: off */

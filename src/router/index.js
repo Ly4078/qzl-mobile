@@ -17,6 +17,8 @@ import Writelist from '@/components/write/writelist'
 import Writedetails from '@/components/write/writedetails'
 import Newdetails from '@/components/news/newdetails'
 import Newlist from '@/components/news/newlist'
+import Bookdetails from '@/components/write/bookdetails'
+
 Vue.use(Router)
 
 export default new Router({
@@ -75,6 +77,9 @@ export default new Router({
     }, {
       path: "/contact",
       component: Contact
+    }, {
+      path: "/bookdetails",
+      component: Bookdetails
     }]
   }]
 })

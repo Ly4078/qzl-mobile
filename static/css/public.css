@@ -309,38 +309,7 @@ html {
   margin: none;
 }
 
-.mo-whys {
-  width: 100%;
-  height: 950px;
-}
 
-.mo-whys li {
-  height: 300px;
-}
-
-.mo-whys li .whyli .whyimg {
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
-}
-
-.mo-whys li .whyli .ptxt {
-  float: right;
-  width: 420px;
-  font-size: 12px;
-  font-size: 30%;
-}
-
-.mo-whys li .whyli .ptxt p:nth-child(1) {
-  font-size: 22px;
-  color: #e67817;
-  margin-bottom: 10px;
-}
-
-.mo-whys li:nth-child(2n) .ptxt {
-  float: left;
-  text-align: right;
-}
 
 .whyjoin .joinus {
   font-size: 35px;
@@ -367,69 +336,7 @@ html {
   color: #ddd;
 }
 
-.mo-pinpai {
-  width: 80%;
-  height: 850px;
-  float: left;
-}
 
-.mo-pinpai .pinpaili {
-  width: 49%;
-  height: 200px;
-  float: left;
-}
-
-.mo-pinpai .pinpaili .b6img {
-  float: left;
-  width: 106px;
-  height: 106px;
-  margin-top: 50px;
-  border-radius: 50%;
-  border: 1px solid #e67817;
-  display: flex;
-  justify-content: center;
-  /* 水平居中 */
-
-  align-items: center;
-  /* 垂直居中 */
-
-}
-
-.mo-pinpai .pinpaili .b6img img {
-  width: 40px;
-  height: 40px;
-}
-
-.mo-pinpai .pinpaili .actb6img {
-  background: #e67817;
-}
-
-.mo-pinpai .pinpaili .b6txt {
-  margin-left: 120px;
-  text-align: left;
-}
-
-.mo-pinpai .pinpaili .b6txt p {
-  font-size: 12px;
-  font-family: "MicrosoftYaHei";
-  font-weight: 400;
-  color: #999;
-  line-height: 26px;
-  font-size: 50%;
-}
-
-.mo-pinpai .pinpaili .b6txt p:nth-child(1) {
-  color: #e67817;
-  font-size: 18px;
-  font-size: 50%;
-  font-family: "MicrosoftYaHei";
-  font-weight: 400;
-  line-height: 40px;
-}
-
-.mo-pinpai .pinpaili:nth-child(2n-1) {
-  margin-right: 1%;
-}
 
 .wxbox {
   width: 80%;
@@ -556,117 +463,6 @@ html {
   border: 1px solid #e67817;
 }
 
-.mo-ablist1 {
-  padding: 40px 0;
-  font-size: 12px;
-  height: 1100px;
-}
-
-.mo-ablist1 li {
-  padding: 2.5%;
-  width: 45%;
-  float: left;
-}
-
-.mo-ablist1 li .b2motai {
-  position: absolute;
-  width: 38%;
-  height: 180px;
-  background: #000;
-  opacity: 0.6;
-  z-index: 10;
-}
-
-.mo-ablist1 li .b2motai .bmtbox {
-  width: 90%;
-  height: 150px;
-  border: 2px solid#fff;
-  margin-top: 5%;
-  margin-left: 4%;
-  overflow: hidden;
-}
-
-.mo-ablist1 li .b2motai .bmtbox img {
-  opacity: 0.6;
-  width: 100%;
-  height: 160px;
-}
-
-.mo-ablist1 li .b2motai .bmtbox p {
-  text-align: center;
-  color: #fff;
-  position: relative;
-  top: -150px;
-  text-align: center;
-  text-indent: 0;
-}
-
-.mo-ablist1 li .b2motai .bmtbox p:nth-child(1) {
-  font-size: 30px;
-  line-height: 40px;
-}
-
-.mo-ablist1 li .b2motai .bmtbox p:nth-child(2) {
-  font-size: 18px;
-  line-height: 26px;
-}
-
-.mo-ablist1 li .b2motai .bmtbox hr {
-  width: 60%;
-  color: red;
-  position: relative;
-  top: -120px;
-}
-
-.mo-ablist1 li .dimg {
-  width: 100%;
-  height: 180px;
-}
-
-.mo-ablist2 {
-  padding: 75px 0 40px 0;
-  height: 530px;
-}
-
-.mo-ablist2 li {
-  width: 49%;
-  float: left;
-  margin-bottom: 14px;
-}
-
-.mo-ablist2 li img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-}
-
-.mo-ablist2 li .bimg {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  line-height: 100px;
-  text-align: center;
-  background: #e67817;
-  float: left;
-  color: #fff;
-  font-size: 30px;
-}
-
-.mo-ablist2 li .bd3iv {
-  width: 60%;
-  float: right;
-}
-
-.mo-ablist2 li .bd3iv p:nth-child(1) {
-  font-weight: bold;
-  line-height: 30px;
-  color: #000;
-}
-
-.mo-ablist2 li:nth-child(2n-1) {
-  margin-right: 1%;
-}
-
 .mo-erjmu {
   width: 100%;
   height: 100px;
@@ -680,7 +476,7 @@ html {
 .mo-erjmu .span1 {
   position: relative;
   left: 70px;
-  top: 10px;
+  top: 14px;
 }
 
 .mo-erjmu .span2 {
@@ -741,22 +537,3 @@ html {
   margin-right: 1%;
 }
 
-.lir p:nth-child(2) {
-  display: -webkit-box;
-  /*作为弹性伸缩盒子模型显示*/
-
-  -webkit-line-clamp: 2;
-  /*显示的行数；如果要设置2行加...则设置为2*/
-
-  overflow: hidden;
-  text-overflow: ellipsis;
-  /* 溢出用省略号*/
-
-  /*! autoprefixer: off */
-
-  -webkit-box-orient: vertical;
-  /*伸缩盒子的子元素排列：从上到下*/
-
-  /* autoprefixer: on */
-
-}

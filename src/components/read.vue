@@ -14,7 +14,12 @@
       <ul class="pagination">
         <li @click="handlepage(0)" :class="0 ==actpage?'actpage':''">首页</li>
         <li @click="handlepage(-1)" :class="-1 ==actpage?'actpage':''">上一页</li>
-        <li v-for="(item,index) in pages" :key="index" @click="handlepage(item)" :class="item ==actpage?'actpage':''">{{item}}</li>
+        <li
+          v-for="(item,index) in pages"
+          :key="index"
+          @click="handlepage(item)"
+          :class="item ==actpage?'actpage':''"
+        >{{item}}</li>
         <li @click="handlepage(-2)" :class="-2 ==actpage?'actpage':''">下一页</li>
         <li @click="handlepage(-3)" :class="-3 ==actpage?'actpage':''">尾页</li>
       </ul>
@@ -27,18 +32,17 @@ export default {
   name: "read",
   data() {
     return {
-        actpage:"",
+      actpage: "",
       pages: ["1", "2", "3", "4", "5"]
     };
   },
   methods: {
     handlepage(obj) {
-        console.log(obj);
-        this.actpage=obj;
-      
+      console.log(obj);
+      this.actpage = obj;
     },
     handlebook(obj) {
-      console.log(obj);
+      this.$router.push("/bookdetails");
     }
   }
 };

@@ -155,8 +155,11 @@ export default {
 
 <style lang="less">
 .culture {
+  .span2{
+    left: -50px;
+  }
   .mo-culture {
-    height: 1000px;
+    height: 750px;
     li {
       width: 49%;
       float: left;
@@ -171,12 +174,12 @@ export default {
         float: right;
       }
       .title {
-        font-size: 14px;
+        font-size: 20px;
         color: #e67817;
       }
       .txt {
         color: #999;
-        font-size: 12px;
+        font-size: 18px;
       }
     }
     li:nth-child(2n-1) {

@@ -42,7 +42,7 @@ export default {
       this.actpage = obj;
     },
     handlebook(obj) {
-      console.log(obj);
+     this.$router.push('/bookdetails');
     }
   }
 };
